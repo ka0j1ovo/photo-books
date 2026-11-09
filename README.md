@@ -44,25 +44,32 @@ python build.py
 - `cover`：封面照片的文件名，留空则自动挑一张颜色最丰富的
 - `curated`：可选，指定一份手写页序（2023 就是这样保留的）
 
-## 发布到 GitHub Pages
+## 在线地址
 
-原始照片约 1 GB，**不要提交**。仓库里只放压缩后的 `assets/photos/`（约 40 MB）。
-`.gitignore` 已经排除了 `photo/`。
+已经发布在 GitHub Pages：<https://ka0j1ovo.github.io/photo-books/>
+
+仓库：<https://github.com/ka0j1ovo/photo-books>（公开，只有压缩图，没有原图）
+
+更新内容后：
 
 ```powershell
-git init
-git add .
-git commit -m "照片图册"
-git branch -M main
-git remote add origin https://github.com/<用户名>/<仓库名>.git
+python build.py
+git add -A
+git commit -m "更新照片"
+git push
+```
+
+推送后 Pages 会自动重新发布，通常一两分钟。
+
+### 换一个仓库发布
+
+```powershell
+git remote set-url origin https://github.com/<用户名>/<仓库名>.git
 git push -u origin main
 ```
 
-然后仓库 **Settings → Pages**，Source 选 *Deploy from a branch*，分支 `main`、目录 `/ (root)`。
+再到仓库 **Settings → Pages**，Source 选 *Deploy from a branch*，分支 `main`、目录 `/ (root)`。
 网址是 `https://<用户名>.github.io/<仓库名>/`。
-
-也可以走 Actions：仓库里已带 `.github/workflows/pages.yml`，把 Pages 的 Source 改成
-*GitHub Actions* 即可，之后每次 push 自动发布。
 
 ## 说明
 
