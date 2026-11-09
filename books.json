@@ -1,0 +1,9 @@
+{
+  "books": [
+    { "year": "2022", "title": "江边的跑道", "cloth": "#6b7053", "cover": "002.jpg" },
+    { "year": "2023", "title": "走廊尽头的橙色", "cloth": "#2f3d40", "cover": "corridor-cover.jpg", "curated": "curation/2023.html" },
+    { "year": "2024", "title": "山、老街与铁轨", "cloth": "#7a4f3d", "cover": "035.jpg" },
+    { "year": "2025", "title": "西北的风", "cloth": "#3c4a5c", "cover": "005.jpg" },
+    { "year": "2026", "title": "寨子与河", "cloth": "#2e2c2a", "cover": "046.jpg" }
+  ]
+}

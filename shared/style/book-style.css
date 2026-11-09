@@ -1,0 +1,60 @@
+@font-face{font-family:"Source Serif 4";src:url("fonts/SourceSerif4-Regular.otf.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Source Serif 4";src:url("fonts/SourceSerif4-It.otf.woff2") format("woff2");font-weight:400;font-style:italic;font-display:swap}
+:root{--paper:#f7f6f0;--ink:#292c26;--cloth:#2f3d40;--accent:#b5562c;--book-serif:"Source Serif 4","Noto Serif SC","Songti SC","SimSun",Georgia,serif;--book-sans:Arial,"Helvetica Neue","Microsoft YaHei",sans-serif}
+.art-page{container-type:inline-size;position:relative;aspect-ratio:var(--page-ratio, .8);overflow:hidden;background:var(--paper) url("paper-grain.svg") repeat;color:var(--ink);font-family:var(--book-serif);font-weight:400}
+.art-page img{display:block;object-fit:contain;filter:none;border:0;border-radius:0;box-shadow:none;width:100%;height:auto}
+.art-page img[data-src]{opacity:0}
+.art-page img.is-loaded{opacity:1;transition:opacity .45s ease}
+.art-page .folio{position:absolute;bottom:4.7%;right:7.7%;margin:0;color:#73766c;font:400 1.6cqw/1 var(--book-serif);letter-spacing:0;text-transform:none}
+.art-page.verso .folio{left:7.7%;right:auto}
+.art-page.endpaper{background-color:#e9e9dc}
+.art-page.cloth{background:var(--cloth) url("cloth-weave.svg") repeat;color:#f2efdf}
+
+/* 封面 */
+.art-page .cover-title{position:absolute;left:13.5%;right:9%;top:14%;margin:0;font:400 7.4cqw/1.16 var(--book-serif);letter-spacing:-.01em;text-shadow:0 1px 0 rgb(29 39 25 / 12%)}
+.art-page .cover-subtitle{position:absolute;left:13.5%;top:26.5%;margin:0;font:400 1.9cqw/1.5 var(--book-serif);letter-spacing:.12em;opacity:.86}
+.art-page .cover-rule{position:absolute;left:13.5%;top:33.2%;width:13%;height:1.5px;background:var(--accent);opacity:.9}
+.art-page .cover-plate{position:absolute;left:13.5%;bottom:17%;width:52%;height:30%;margin:0;overflow:hidden;box-shadow:0 1px 2px rgb(20 28 22 / 22%)}
+.art-page .cover-plate img{width:100%;height:100%;object-fit:cover}
+.art-page .cover-foot{position:absolute;bottom:7.5%;left:13.5%;margin:0;font:400 1.35cqw/1.4 var(--book-sans);letter-spacing:.22em;opacity:.8}
+
+/* 扉页 */
+.art-page .title-block{position:absolute;top:26%;left:16%;right:12%}
+.art-page .title-block h2{font:400 4.6cqw/1.22 var(--book-serif);letter-spacing:-.01em;margin:0 0 5cqw}
+.art-page .title-block p{font:400 2.1cqw/1.6 var(--book-serif);margin:0}
+.art-page .epigraph{position:absolute;left:16%;right:16%;bottom:21%;margin:0;font:italic 400 1.95cqw/1.85 var(--book-serif);color:#555a4f;letter-spacing:.03em}
+.art-page .imprint{position:absolute;left:16%;bottom:13%;margin:0;font:400 1.35cqw/1.4 var(--book-sans);letter-spacing:.26em;color:#7d8175}
+
+/* 内页图片 */
+.art-page .figure{position:absolute;left:50%;top:47%;transform:translate(-50%,-50%);margin:0}
+.art-page .figure img{width:100%;height:auto}
+.art-page .figure figcaption{margin-top:2.6cqw;font:400 2.15cqw/1.5 var(--book-serif);letter-spacing:.04em;color:#575b51}
+.art-page.bleed-page{background:#121413}
+.art-page.bleed-page img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 50%}
+
+/* 月份分隔页 */
+.art-page .month{position:absolute;left:14%;top:30%;margin:0;font:400 12.5cqw/1.1 var(--book-serif);letter-spacing:.1em}
+.art-page .month-meta{position:absolute;left:15%;top:50%;margin:0;font:400 1.7cqw/1.4 var(--book-sans);letter-spacing:.22em;color:#767a6e}
+.art-page .month-rule{position:absolute;left:15%;top:46.5%;width:12%;height:1.5px;background:var(--accent);opacity:.8}
+
+/* 版权页 */
+.art-page .colophon{position:absolute;left:16%;right:18%;top:45%;font:400 2.2cqw/1.55 var(--book-serif)}
+.art-page .colophon h3{font:400 3.3cqw/1.3 var(--book-serif);letter-spacing:.01em;margin:0 0 4cqw}
+.art-page .colophon h3::after{content:"";display:block;width:16%;height:1px;background:var(--accent);margin-top:4.2cqw;opacity:.85}
+.art-page .colophon p{margin:0 0 5cqw}
+.art-page .colophon .small-print{font-size:1.85cqw;letter-spacing:.02em;line-height:1.75}
+.art-page.cloth .back-mark{position:absolute;bottom:10%;left:13.5%;font:400 1.7cqw/1.4 var(--book-serif);letter-spacing:.06em;opacity:.85}
+
+/* 手机单页时字号上调 */
+@media (max-width: 700px){
+  .art-page .figure figcaption{font-size:2.75cqw}
+  .art-page .epigraph{font-size:2.5cqw}
+  .art-page .title-block p{font-size:2.7cqw}
+  .art-page .title-block h2{font-size:5.4cqw}
+  .art-page .colophon{font-size:2.7cqw}
+  .art-page .colophon h3{font-size:4.2cqw}
+  .art-page .colophon .small-print{font-size:2.25cqw}
+  .art-page .imprint{font-size:2cqw}
+  .art-page .cover-subtitle{font-size:2.4cqw}
+  .art-page .month-meta{font-size:2.1cqw}
+}

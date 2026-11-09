@@ -1,0 +1,42 @@
+:root {
+  --ink: #292c26;
+  --paper: #efeee6;
+  --muted: #6f7465;
+  --serif: "Source Serif 4", "Noto Serif SC", "Songti SC", "SimSun", Georgia, serif;
+  --sans: Arial, "Helvetica Neue", "Microsoft YaHei", sans-serif;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; min-height: 100%; }
+body { background: var(--paper); color: var(--ink); font-family: var(--serif); -webkit-font-smoothing: antialiased; }
+.library { max-width: 1120px; margin: 0 auto; padding: 70px 36px 90px; }
+.library-head { border-bottom: 1px solid #d9d8cc; padding-bottom: 30px; }
+.eyebrow { margin: 0; font: 11px/1 var(--sans); letter-spacing: .34em; color: #7d8273; text-transform: uppercase; }
+.library-head h1 { margin: .28em 0 .3em; font: 400 clamp(30px, 3.6vw, 46px)/1.15 var(--serif); letter-spacing: .02em; }
+.meta { margin: 0; font: 12px/1.6 var(--sans); letter-spacing: .12em; color: var(--muted); }
+.shelf { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 46px 30px; margin-top: 54px; max-width: 980px; }
+.book-card { display: block; color: inherit; text-decoration: none; }
+.card-cover {
+  position: relative; display: block; aspect-ratio: 4 / 5; padding: 22px 20px; overflow: hidden;
+  background: var(--cloth) url("shared/style/cloth-weave.svg") repeat;
+  color: #f2efdf; box-shadow: 0 1px 2px rgb(30 36 22 / 18%), 0 14px 24px -14px rgb(30 36 22 / 55%);
+  transition: transform .35s ease, box-shadow .35s ease;
+}
+.book-card:hover .card-cover { transform: translateY(-7px); box-shadow: 0 2px 3px rgb(30 36 22 / 18%), 0 22px 34px -16px rgb(30 36 22 / 60%); }
+.book-card:focus-visible { outline: 2px solid #6b735d; outline-offset: 6px; }
+.card-year { display: block; font: 10px/1 var(--sans); letter-spacing: .24em; opacity: .72; }
+.card-title { display: block; margin-top: 16px; max-width: 88%; font: 400 clamp(18px, 1.55vw, 21px)/1.34 var(--serif); letter-spacing: .02em; }
+.card-photo { position: absolute; left: 20px; bottom: 20px; width: 62%; aspect-ratio: 4 / 3; object-fit: cover; background: #222; box-shadow: 0 1px 2px rgb(0 0 0 / 30%); filter: saturate(.96); }
+.card-info { display: block; margin-top: 14px; font: 11px/1.5 var(--sans); letter-spacing: .1em; color: var(--muted); }
+.card-info b { font-weight: 400; color: #3c4136; }
+.library-foot { margin-top: 72px; font: 11px/1.6 var(--sans); letter-spacing: .16em; color: #8b9081; }
+@media (max-width: 900px) {
+  .shelf { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 640px) {
+  .library { padding: 44px 20px 64px; }
+  .shelf { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 30px 18px; margin-top: 36px; }
+  .card-cover { padding: 16px 14px; }
+  .card-title { margin-top: 12px; font-size: 15px; }
+  .card-photo { left: 14px; bottom: 14px; }
+  .card-info { font-size: 10px; letter-spacing: .04em; }
+}

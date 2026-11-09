@@ -1,0 +1,47 @@
+[
+  {
+    "year": "2026",
+    "title": "寨子与河",
+    "cloth": "#2e2c2a",
+    "count": 84,
+    "skipped": 2,
+    "range": "2026 年 1 月 — 8 月",
+    "subtitle": "2026 年 1 月 — 8 月"
+  },
+  {
+    "year": "2025",
+    "title": "西北的风",
+    "cloth": "#3c4a5c",
+    "count": 66,
+    "skipped": 1,
+    "range": "2025 年 2 月 — 8 月",
+    "subtitle": "2025 年 2 月 — 8 月"
+  },
+  {
+    "year": "2024",
+    "title": "山、老街与铁轨",
+    "cloth": "#7a4f3d",
+    "count": 43,
+    "skipped": 2,
+    "range": "2024 年 8 月 — 2025 年 3 月",
+    "subtitle": "2024 年 8 月 — 2025 年 3 月"
+  },
+  {
+    "year": "2023",
+    "title": "走廊尽头的橙色",
+    "cloth": "#2f3d40",
+    "count": 11,
+    "skipped": 0,
+    "range": "2023 年 10 月 — 2024 年 6 月",
+    "subtitle": "2023 年 10 月 — 2024 年 6 月"
+  },
+  {
+    "year": "2022",
+    "title": "江边的跑道",
+    "cloth": "#6b7053",
+    "count": 7,
+    "skipped": 0,
+    "range": "2022 年 3 月 — 8 月",
+    "subtitle": "2022 年 3 月 — 8 月"
+  }
+]
