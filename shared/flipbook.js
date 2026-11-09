@@ -132,3 +132,12 @@ window.addEventListener("keydown", (event) => {
   if (event.key === "Home") pageFlip.turnToPage(0);
   if (event.key === "End") pageFlip.turnToPage(pageFlip.getPageCount() - 1);
 });
+
+/* 图片不做右击「图片另存为」、拖拽保存，也不长按弹出保存菜单。 */
+bookElement.addEventListener("contextmenu", (event) => event.preventDefault());
+document.addEventListener("dragstart", (event) => {
+  if (event.target instanceof HTMLImageElement) event.preventDefault();
+});
+document.addEventListener("selectstart", (event) => {
+  if (bookElement.contains(event.target)) event.preventDefault();
+});

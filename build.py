@@ -300,6 +300,7 @@ def generated_pages(book: dict, photos: list[dict], base: str) -> list[str]:
 
 
 def book_html(book: dict, pages: list[str], base: str) -> str:
+    pages = [page.replace("<img ", '<img draggable="false" ') for page in pages]
     body = "\n\n".join("        " + page.replace("\n", "\n        ") for page in pages)
     return f'''<!doctype html>
 <html lang="zh-CN">
@@ -348,7 +349,7 @@ def library_html(books: list[dict]) -> str:
         <span class="card-cover" style="--cloth:{esc(book["cloth"])}">
           <span class="card-year">{book["year"]}</span>
           <span class="card-title">{esc(book["title"])}</span>
-          <img class="card-photo" src="assets/photos/{book["year"]}/{book["cover_photo"]["file"]}" alt="" loading="lazy">
+          <img class="card-photo" src="assets/photos/{book["year"]}/{book["cover_photo"]["file"]}" alt="" loading="lazy" draggable="false">
         </span>
         <span class="card-info"><b>{book["count"]}</b> 张 · {esc(book["range"])}</span>
       </a>''')

@@ -8,7 +8,8 @@
 * { box-sizing: border-box; }
 html, body { margin: 0; min-height: 100%; }
 body { background: var(--paper); color: var(--ink); font-family: var(--serif); -webkit-font-smoothing: antialiased; }
-.library { max-width: 1120px; margin: 0 auto; padding: 70px 36px 90px; }
+.library { max-width: 1120px; margin: 0 auto; padding: 70px 36px 90px; -webkit-user-select: none; user-select: none; }
+.card-photo { -webkit-user-drag: none; user-drag: none; -webkit-touch-callout: none; }
 .library-head { border-bottom: 1px solid #d9d8cc; padding-bottom: 30px; }
 .eyebrow { margin: 0; font: 11px/1 var(--sans); letter-spacing: .34em; color: #7d8273; text-transform: uppercase; }
 .library-head h1 { margin: .28em 0 .3em; font: 400 clamp(30px, 3.6vw, 46px)/1.15 var(--serif); letter-spacing: .02em; }
